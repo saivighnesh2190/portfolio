@@ -15,7 +15,7 @@ export const hero = {
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nekkanti-sai-vighnesh-2a86b0372' },
     { label: 'GitHub', url: 'https://github.com/saivighnesh2190' },
   ],
-  resumeFileName: 'N-Sai-Vighnesh-Resume.pdf',
+  resumeFileName: 'N-Sai-Vighnesh-Resume-2025.pdf',
 }
 
 export const about = {
