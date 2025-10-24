@@ -33,6 +33,11 @@ export function ExperienceSection() {
               <span>{certification.name}</span>
             </div>
             <span className="card__period">Issued by {certification.issuer}</span>
+            {certification.link ? (
+              <a className="card__link" href={certification.link} target="_blank" rel="noreferrer">
+                View credential
+              </a>
+            ) : null}
           </article>
         ))}
       </div>

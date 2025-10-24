@@ -78,14 +78,24 @@ export const projects = [
 
 export const certifications = [
   {
+    name: 'Oracle Cloud Infrastructure 2025 Certified DevOps Professional',
+    issuer: 'Oracle',
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=635DD10F83AB9C67D5B6AF301E477BF32AE5B89C07809C71753495BFD968EC70',
+  },
+  {
+    name: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional',
+    issuer: 'Oracle',
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=4CAAC260134E339096A818E019596AF69A9F76E78BE7E8F422800FB6869F1EC5',
+  },
+  {
     name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
     issuer: 'Oracle',
-    link: undefined,
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=32712AFC91674345FB776506C63913544DD85D0D82B12D987BD22D1866568F81',
   },
   {
     name: 'Oracle Cloud Infrastructure 2025 Certified Foundations Associate',
     issuer: 'Oracle',
-    link: undefined,
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=99478E5D8EE9363BA525D39E8FCC1C96113C14B2738143828FDD9D5D35BD991F',
   },
   {
     name: 'Oracle Java Foundations',
