@@ -9,7 +9,7 @@ export const hero = {
   highlights: [
     { label: 'Projects delivered', value: '3' },
     { label: 'Industry certifications', value: '4' },
-    { label: 'Internship experience', value: '3 programs' },
+    { label: 'Internships', value: '3 programs' },
   ],
   socials: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nekkanti-sai-vighnesh-2a86b0372' },
