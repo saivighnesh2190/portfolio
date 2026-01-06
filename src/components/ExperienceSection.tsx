@@ -1,5 +1,6 @@
 import { BriefcaseBusiness } from 'lucide-react'
 import { Section } from './Section'
+import { TiltCard } from './TiltCard'
 import { certifications, internships } from '../content'
 
 export function ExperienceSection() {
@@ -28,7 +29,7 @@ export function ExperienceSection() {
 
       <div className="grid grid--two">
         {certifications.map((certification) => (
-          <article className="card" key={certification.name}>
+          <TiltCard className="card" key={certification.name}>
             <div className="card__title">
               <span>{certification.name}</span>
             </div>
@@ -38,9 +39,10 @@ export function ExperienceSection() {
                 View credential
               </a>
             ) : null}
-          </article>
+          </TiltCard>
         ))}
       </div>
     </Section>
   )
 }
+

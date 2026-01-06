@@ -1,4 +1,6 @@
+import { ExternalLink, Github } from 'lucide-react'
 import { Section } from '../components/Section'
+import { TiltCard } from '../components/TiltCard'
 import { projects } from '../content'
 
 export function ProjectsPage() {
@@ -11,7 +13,7 @@ export function ProjectsPage() {
         >
             <div className="grid grid--two">
                 {projects.map((project) => (
-                    <article className="card" key={project.title}>
+                    <TiltCard key={project.title} className="card">
                         <div className="card__title">
                             <span>{project.title}</span>
                             <span className="card__period">{project.period}</span>
@@ -24,9 +26,36 @@ export function ProjectsPage() {
                                 </span>
                             ))}
                         </div>
-                    </article>
+                        {(project.liveDemo || project.github) && (
+                            <div className="card__links">
+                                {project.liveDemo && (
+                                    <a
+                                        href={project.liveDemo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="card__link"
+                                    >
+                                        <ExternalLink size={16} />
+                                        <span>Live Demo</span>
+                                    </a>
+                                )}
+                                {project.github && (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="card__link"
+                                    >
+                                        <Github size={16} />
+                                        <span>GitHub</span>
+                                    </a>
+                                )}
+                            </div>
+                        )}
+                    </TiltCard>
                 ))}
             </div>
         </Section>
     )
 }
+

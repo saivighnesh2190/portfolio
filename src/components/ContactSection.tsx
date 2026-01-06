@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
 import { contact } from '../content'
 import { Section } from './Section'
+import { TiltCard } from './TiltCard'
 import { Mail, MapPin, Phone, Github, Linkedin, Loader2 } from 'lucide-react'
 
 type FormState = {
@@ -59,7 +60,7 @@ export function ContactSection() {
       description="Ready to co-create something ambitious? Reach out for internships, freelance work, or collaborative projects."
     >
       <div className="contact-grid">
-        <div className="contact-card">
+        <TiltCard className="contact-card">
           <h3>Where to find me</h3>
           <ul>
             <li>
@@ -91,7 +92,7 @@ export function ContactSection() {
               </li>
             ) : null}
           </ul>
-        </div>
+        </TiltCard>
 
         <form className="contact-form" ref={form} onSubmit={handleSubmit}>
           <div className="contact-form__row">

@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
 import { Navigation } from './Navigation'
+import { GlowCursor } from './Cursor3D'
+import { AnimatedBackground } from './AnimatedBackground'
 import { hero } from '../content'
 
 export function Layout() {
@@ -8,6 +10,8 @@ export function Layout() {
 
   return (
     <div className="app-shell">
+      <AnimatedBackground />
+      <GlowCursor />
       <Navigation />
       <main>
         <Outlet />
@@ -26,3 +30,5 @@ export function Layout() {
     </div>
   )
 }
+
+

@@ -1,4 +1,5 @@
 import { Section } from '../components/Section'
+import { TiltCard } from '../components/TiltCard'
 import { skills } from '../content'
 
 export function SkillsPage() {
@@ -11,7 +12,7 @@ export function SkillsPage() {
         >
             <div className="skills-grid">
                 {skills.map((group) => (
-                    <div className="skills-card" key={group.category}>
+                    <TiltCard className="skills-card" key={group.category}>
                         <span className="skills-card__title">{group.category}</span>
                         <div className="skills-card__items">
                             {group.items.map((item) => (
@@ -20,9 +21,10 @@ export function SkillsPage() {
                                 </span>
                             ))}
                         </div>
-                    </div>
+                    </TiltCard>
                 ))}
             </div>
         </Section>
     )
 }
+

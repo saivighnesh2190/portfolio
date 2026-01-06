@@ -1,7 +1,6 @@
 import { Mail, MapPin, Phone, ArrowUpRight, Download } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { hero } from '../content'
-import { BackgroundCanvas } from './BackgroundCanvas'
 
 export function Hero() {
   const [linkedIn] = hero.socials
@@ -15,7 +14,7 @@ export function Hero() {
   return (
     <header className="hero" id="home">
       <div className="hero__background">
-        <BackgroundCanvas />
+        {/* Animated background is now global in Layout */}
       </div>
       <div className="hero__content">
         <div className="hero__text">

@@ -1,6 +1,7 @@
 import { BookOpen, HeartHandshake, Sparkles, Target } from 'lucide-react'
 import { about, hero } from '../content'
 import { Section } from './Section'
+import { TiltCard } from './TiltCard'
 
 export function AboutSection() {
   return (
@@ -11,7 +12,7 @@ export function AboutSection() {
       description="Grounded in full stack engineering, energized by applied AI, and focused on delivering experiences that feel genuinely helpful."
     >
       <div className="about-grid">
-        <article className="about-card about-card--story">
+        <TiltCard className="about-card about-card--story">
           <div className="about-card__icon">
             <Sparkles size={22} />
           </div>
@@ -22,8 +23,8 @@ export function AboutSection() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </article>
-        <article className="about-card about-card--focus">
+        </TiltCard>
+        <TiltCard className="about-card about-card--focus">
           <div className="about-card__icon">
             <Target size={22} />
           </div>
@@ -33,8 +34,8 @@ export function AboutSection() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </article>
-        <article className="about-card about-card--values">
+        </TiltCard>
+        <TiltCard className="about-card about-card--values">
           <div className="about-card__icon">
             <HeartHandshake size={22} />
           </div>
@@ -44,8 +45,8 @@ export function AboutSection() {
               <li key={value}>{value}</li>
             ))}
           </ul>
-        </article>
-        <article className="about-card about-card--facts">
+        </TiltCard>
+        <TiltCard className="about-card about-card--facts">
           <div className="about-card__icon">
             <BookOpen size={22} />
           </div>
@@ -58,8 +59,9 @@ export function AboutSection() {
               </div>
             ))}
           </div>
-        </article>
+        </TiltCard>
       </div>
     </Section>
   )
 }
+

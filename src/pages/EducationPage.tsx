@@ -1,4 +1,5 @@
 import { Section } from '../components/Section'
+import { TiltCard } from '../components/TiltCard'
 import { education } from '../content'
 
 export function EducationPage() {
@@ -11,7 +12,7 @@ export function EducationPage() {
         >
             <div className="grid">
                 {education.map((entry) => (
-                    <article className="card education-card" key={entry.program}>
+                    <TiltCard className="card education-card" key={entry.program}>
                         <div className="card__title">
                             <span>{entry.program}</span>
                         </div>
@@ -20,9 +21,10 @@ export function EducationPage() {
                             <span>{entry.period}</span>
                             <span>{entry.score}</span>
                         </div>
-                    </article>
+                    </TiltCard>
                 ))}
             </div>
         </Section>
     )
 }
+

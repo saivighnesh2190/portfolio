@@ -7,7 +7,7 @@ export const hero = {
   summary:
     'Aspiring Full Stack Developer and AI Engineer with a strong foundation in web technologies and artificial intelligence. Proficient in creating responsive applications and integrating intelligent features, such as the Gemini API. Eager to apply strong analytical and problem-solving skills to build innovative solutions.',
   highlights: [
-    { label: 'Projects delivered', value: '3' },
+    { label: 'Projects delivered', value: '4' },
     { label: 'Industry certifications', value: '4' },
     { label: 'Internships', value: '3 programs' },
   ],
@@ -54,11 +54,21 @@ export const contact = {
 
 export const projects = [
   {
+    title: 'ClipFlow AI',
+    period: '2025',
+    description:
+      'Built an AI-powered DSA progress tracking platform that syncs and tracks coding progress across LeetCode and Codeforces. Features include AI-powered learning insights, streak tracking, goal setting, rating analytics, and an AI chat assistant for personalized recommendations.',
+    stack: ['React', 'TypeScript', 'Next.js', 'AI'],
+    liveDemo: 'https://clipflowai.vercel.app/',
+    github: 'https://github.com/saivighnesh2190/clip-flow-ai',
+  },
+  {
     title: 'Travel Planner Website',
     period: '2024',
     description:
       'Built a responsive travel planner with React and Vite, supported by a Spring Boot and MySQL backend. Integrated a Gemini-powered chatbot that delivers precise, context-aware information about destinations and travel logistics.',
     stack: ['React', 'Vite', 'Spring Boot', 'MySQL', 'Gemini API'],
+    github: 'https://github.com/saivighnesh2190/travel-planner',
   },
   {
     title: 'No-Code Cleaning Agent',
@@ -66,6 +76,7 @@ export const projects = [
     description:
       'Developed a no-code conversational agent that streamlines home cleaning bookings. Collects property details, generates pricing dynamically, and automates confirmations using Voiceflow, Make, and Relevance AI.',
     stack: ['Voiceflow', 'Make', 'Relevance AI', 'Automation'],
+    liveDemo: 'https://creator.voiceflow.com/share/6866283c3dd3b7e09dd1f9c9/development',
   },
   {
     title: 'Agricultural Sales Website',
