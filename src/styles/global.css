@@ -80,53 +80,126 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem clamp(1.5rem, 3vw, 4rem);
-  background: rgba(5, 9, 22, 0.82);
+  padding: 1rem clamp(1.5rem, 3vw, 4rem);
+  background: rgba(5, 9, 22, 0.85);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(108, 141, 255, 0.2);
+  border-bottom: 1px solid rgba(108, 141, 255, 0.15);
 }
 
 .navigation__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.navigation__links {
-  display: flex;
-  gap: clamp(1rem, 3vw, 2.5rem);
   font-size: 0.95rem;
-  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: color 200ms ease;
 }
 
-.navigation__links a {
+.navigation__brand:hover {
+  color: var(--accent);
+}
+
+/* Tubelight Container */
+.navigation__tubelight-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.35rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual Nav Item */
+.navigation__tubelight-item {
   position: relative;
-  padding-bottom: 0.4rem;
-  transition: color 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-radius: 50px;
+  transition: color 200ms ease, background-color 200ms ease;
+  cursor: pointer;
 }
 
-.navigation__links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-}
-
-.navigation__links a:hover,
-.navigation__links a:focus-visible {
+.navigation__tubelight-item:hover {
   color: var(--text-primary);
 }
 
-.navigation__links a:hover::after,
-.navigation__links a:focus-visible::after {
-  transform: scaleX(1);
+.navigation__tubelight-item.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Tubelight Lamp Effect */
+.navigation__lamp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Lamp Bar (the small strip at top) */
+.navigation__lamp-bar {
+  width: 2rem;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Glow Layers */
+.navigation__lamp-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  filter: blur(10px);
+}
+
+.navigation__lamp-glow--1 {
+  width: 3rem;
+  height: 3rem;
+  top: -1.5rem;
+  opacity: 0.25;
+}
+
+.navigation__lamp-glow--2 {
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  opacity: 0.15;
+}
+
+.navigation__lamp-glow--3 {
+  width: 2rem;
+  height: 2rem;
+  top: -1rem;
+  opacity: 0.3;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navigation__tubelight-item {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navigation__brand span {
+    display: none;
+  }
 }
 
 .hero {
