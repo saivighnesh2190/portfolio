@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser'
 import { contact } from '../content'
 import { Section } from './Section'
 import { TiltCard } from './TiltCard'
-import { Mail, MapPin, Phone, Github, Linkedin, Loader2 } from 'lucide-react'
+import { Mail, MapPin, Phone, Github, Linkedin, Loader2, ExternalLink } from 'lucide-react'
 
 type FormState = {
   name: string
@@ -88,6 +88,38 @@ export function ContactSection() {
                 <Github size={18} />
                 <a href={contact.github} target="_blank" rel="noreferrer">
                   GitHub
+                </a>
+              </li>
+            ) : null}
+            {contact.leetcode ? (
+              <li>
+                <ExternalLink size={18} />
+                <a href={contact.leetcode} target="_blank" rel="noreferrer">
+                  LeetCode
+                </a>
+              </li>
+            ) : null}
+            {contact.codeforces ? (
+              <li>
+                <ExternalLink size={18} />
+                <a href={contact.codeforces} target="_blank" rel="noreferrer">
+                  Codeforces
+                </a>
+              </li>
+            ) : null}
+            {contact.codechef ? (
+              <li>
+                <ExternalLink size={18} />
+                <a href={contact.codechef} target="_blank" rel="noreferrer">
+                  CodeChef
+                </a>
+              </li>
+            ) : null}
+            {contact.hackerrank ? (
+              <li>
+                <ExternalLink size={18} />
+                <a href={contact.hackerrank} target="_blank" rel="noreferrer">
+                  HackerRank
                 </a>
               </li>
             ) : null}

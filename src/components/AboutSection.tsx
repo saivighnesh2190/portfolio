@@ -1,5 +1,5 @@
-import { BookOpen, HeartHandshake, Sparkles, Target } from 'lucide-react'
-import { about, hero } from '../content'
+import { BookOpen, HeartHandshake, Sparkles, Target, Code } from 'lucide-react'
+import { about, hero, codingProfiles } from '../content'
 import { Section } from './Section'
 import { TiltCard } from './TiltCard'
 
@@ -59,6 +59,29 @@ export function AboutSection() {
               </div>
             ))}
           </div>
+        </TiltCard>
+        <TiltCard className="about-card about-card--profiles">
+          <div className="about-card__icon">
+            <Code size={22} />
+          </div>
+          <h3>Coding profiles</h3>
+          <ul className="about-card__profiles">
+            {codingProfiles
+              .filter((profile) => profile.url)
+              .map((profile) => (
+                <li key={profile.label}>
+                  <div>
+                    <span className="about-card__profiles-label">{profile.label}</span>
+                    {profile.rating ? (
+                      <span className="about-card__profiles-rating">{profile.rating}</span>
+                    ) : null}
+                  </div>
+                  <a href={profile.url} target="_blank" rel="noreferrer">
+                    View profile
+                  </a>
+                </li>
+              ))}
+          </ul>
         </TiltCard>
       </div>
     </Section>

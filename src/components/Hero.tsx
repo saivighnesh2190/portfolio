@@ -18,6 +18,10 @@ export function Hero() {
       </div>
       <div className="hero__content">
         <div className="hero__text">
+          <div className="hero__badge">
+            <span className="hero__badge-dot" />
+            Open to Summer 2026 internships
+          </div>
           <span className="hero__eyebrow">{hero.title}</span>
           <h1 className="hero__title">Hi, I&apos;m {hero.name}</h1>
           <p className="hero__summary">{hero.summary}</p>

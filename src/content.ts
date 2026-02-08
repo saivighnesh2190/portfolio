@@ -1,11 +1,11 @@
 export const hero = {
   name: 'N Sai Vighnesh',
-  title: 'Full Stack Developer & AI Engineer',
+  title: 'Full-Stack Developer (B.Tech CSE, 2027) | AI Projects',
   location: 'Ravulapalem, Andhra Pradesh, India',
   email: 'nsv2190@gmail.com',
   phone: '+91 9059854218',
   summary:
-    'Aspiring Full Stack Developer and AI Engineer with a strong foundation in web technologies and artificial intelligence. Proficient in creating responsive applications and integrating intelligent features, such as the Gemini API. Eager to apply strong analytical and problem-solving skills to build innovative solutions.',
+    '3rd-year B.Tech CSE student building full-stack products with practical AI. Focused on clean UX, reliable APIs, and real-world problem solving. Seeking Summer 2026 internships.',
   highlights: [
     { label: 'Projects delivered', value: '4' },
     { label: 'Industry certifications', value: '4' },
@@ -50,14 +50,25 @@ export const contact = {
   phone: hero.phone,
   linkedin: hero.socials.find((item) => item.label === 'LinkedIn')?.url,
   github: hero.socials.find((item) => item.label === 'GitHub')?.url,
+  leetcode: 'https://leetcode.com/u/nsaivighnesh2190/',
+  codeforces: 'https://codeforces.com/profile/2300030455cse',
+  codechef: 'https://www.codechef.com/users/n_sai_vighnesh',
+  hackerrank: 'https://www.hackerrank.com/profile/h2300030455',
 }
+
+export const codingProfiles = [
+  { label: 'LeetCode', url: contact.leetcode, rating: undefined },
+  { label: 'Codeforces', url: contact.codeforces, rating: undefined },
+  { label: 'CodeChef', url: contact.codechef, rating: undefined },
+  { label: 'HackerRank', url: contact.hackerrank, rating: undefined },
+]
 
 export const projects = [
   {
     title: 'ClipFlow AI',
     period: '2025',
     description:
-      'Built an AI-powered DSA progress tracking platform that syncs and tracks coding progress across LeetCode and Codeforces. Features include AI-powered learning insights, streak tracking, goal setting, rating analytics, and an AI chat assistant for personalized recommendations.',
+      'AI-powered DSA progress platform that aggregates LeetCode and Codeforces activity. Includes streaks, goal tracking, rating analytics, and a chat assistant that turns progress into next-step recommendations.',
     stack: ['React', 'TypeScript', 'Next.js', 'AI'],
     liveDemo: 'https://clipflowai.vercel.app/',
     github: 'https://github.com/saivighnesh2190/clip-flow-ai',
@@ -66,7 +77,7 @@ export const projects = [
     title: 'Travel Planner Website',
     period: '2024',
     description:
-      'Built a responsive travel planner with React and Vite, supported by a Spring Boot and MySQL backend. Integrated a Gemini-powered chatbot that delivers precise, context-aware information about destinations and travel logistics.',
+      'Responsive travel planner built with React + Vite and a Spring Boot/MySQL backend. Includes a Gemini-powered chatbot for itinerary guidance, visa tips, and logistics answers.',
     stack: ['React', 'Vite', 'Spring Boot', 'MySQL', 'Gemini API'],
     github: 'https://github.com/saivighnesh2190/travel-planner',
   },
@@ -74,7 +85,7 @@ export const projects = [
     title: 'No-Code Cleaning Agent',
     period: '2024',
     description:
-      'Developed a no-code conversational agent that streamlines home cleaning bookings. Collects property details, generates pricing dynamically, and automates confirmations using Voiceflow, Make, and Relevance AI.',
+      'No-code booking assistant that captures property details, generates pricing, and automates confirmations using Voiceflow, Make, and Relevance AI.',
     stack: ['Voiceflow', 'Make', 'Relevance AI', 'Automation'],
     liveDemo: 'https://creator.voiceflow.com/share/6866283c3dd3b7e09dd1f9c9/development',
   },
@@ -82,7 +93,7 @@ export const projects = [
     title: 'Agricultural Sales Website',
     period: '2023',
     description:
-      'Created a farmer-focused marketplace using Python and Django. Implemented product catalogs, pricing insights, and inventory tools to help streamline procurement and sales workflows.',
+      'Farmer-focused marketplace built with Django that supports product catalogs, pricing insights, and inventory workflows.',
     stack: ['Django', 'Python', 'PostgreSQL'],
   },
 ]
@@ -102,21 +113,6 @@ export const certifications = [
     name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
     issuer: 'Oracle',
     link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=32712AFC91674345FB776506C63913544DD85D0D82B12D987BD22D1866568F81',
-  },
-  {
-    name: 'Oracle Cloud Infrastructure 2025 Certified Foundations Associate',
-    issuer: 'Oracle',
-    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=99478E5D8EE9363BA525D39E8FCC1C96113C14B2738143828FDD9D5D35BD991F',
-  },
-  {
-    name: 'Oracle Java Foundations',
-    issuer: 'Oracle',
-    link: undefined,
-  },
-  {
-    name: 'Aviatrix Multicloud Network Associate',
-    issuer: 'Aviatrix',
-    link: undefined,
   },
 ]
 
