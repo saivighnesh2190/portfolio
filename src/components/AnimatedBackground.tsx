@@ -20,7 +20,7 @@ export function AnimatedBackground() {
 
         let animationFrameId: number
         let points: Point[] = []
-        let mouse = { x: 0, y: 0 }
+        const mouse = { x: 0, y: 0 }
 
         const resize = () => {
             canvas.width = window.innerWidth
