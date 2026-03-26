@@ -1,7 +1,7 @@
 import React from 'react';
 import emailjs from '@emailjs/browser';
 
-const portraitUrl = '/MyImage.jpg';
+const portraitUrl = `${import.meta.env.BASE_URL}MyImage.jpg`;
 const projectBannerUrl =
   'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80';
 
