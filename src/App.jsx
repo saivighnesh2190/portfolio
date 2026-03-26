@@ -2,6 +2,7 @@ import React from 'react';
 import emailjs from '@emailjs/browser';
 
 const portraitUrl = `${import.meta.env.BASE_URL}MyImage.jpg`;
+const resumeUrl = `${import.meta.env.BASE_URL}N-Sai-Vighnesh-FINAL.pdf`;
 const projectBannerUrl =
   'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80';
 
@@ -116,14 +117,6 @@ const projects = [
 
 const websites = [
   {
-    title: 'Portfolio',
-    status: 'Active',
-    description: 'My personal portfolio with projects, writing, and engineering work.',
-    traffic: 'Live',
-    revenue: 'saivighnesh2190.github.io',
-    link: 'https://saivighnesh2190.github.io/portfolio/',
-  },
-  {
     title: 'GitHub',
     status: 'Active',
     description: 'Open-source repositories and full-stack / AI project implementations.',
@@ -154,6 +147,22 @@ const websites = [
     traffic: 'Public',
     revenue: 'h2300030455',
     link: 'https://www.hackerrank.com/profile/h2300030455',
+  },
+  {
+    title: 'CodeChef',
+    status: 'Active',
+    description: 'Competitive programming profile and contest participation.',
+    traffic: 'Active',
+    revenue: 'n_sai_vighnesh',
+    link: 'https://www.codechef.com/users/n_sai_vighnesh',
+  },
+  {
+    title: 'SmartInterviews',
+    status: 'Active',
+    description: 'SmartInterviews coding profile and practice dashboard.',
+    traffic: 'Public',
+    revenue: 'nsv2300030455',
+    link: 'https://smartinterviews.in/profile/nsv2300030455',
   },
 ];
 
@@ -445,12 +454,11 @@ function Hero() {
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="https://saivighnesh2190.github.io/portfolio/"
-              target="_blank"
-              rel="noreferrer"
+              href={resumeUrl}
+              download
               className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white shadow-soft"
             >
-              Portfolio
+              Download Resume
             </a>
             <a
               href="https://github.com/saivighnesh2190"
@@ -980,6 +988,14 @@ function ContactSection() {
             <a href="https://github.com/saivighnesh2190" target="_blank" rel="noreferrer" className="rounded-2xl border border-borderSoft bg-slate-50 p-4">
               <p className="text-xs text-body">GitHub</p>
               <p className="mt-1 text-sm font-semibold text-ink">saivighnesh2190</p>
+            </a>
+            <a href="https://t.me/saivig2190" target="_blank" rel="noreferrer" className="rounded-2xl border border-borderSoft bg-slate-50 p-4">
+              <p className="text-xs text-body">Telegram</p>
+              <p className="mt-1 text-sm font-semibold text-ink">@saivig2190</p>
+            </a>
+            <a href="https://discord.com/users/vighnesh_sai_2301" target="_blank" rel="noreferrer" className="rounded-2xl border border-borderSoft bg-slate-50 p-4">
+              <p className="text-xs text-body">Discord</p>
+              <p className="mt-1 text-sm font-semibold text-ink">vighnesh_sai_2301</p>
             </a>
           </div>
 
