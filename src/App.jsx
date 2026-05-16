@@ -2,7 +2,8 @@ import React from 'react';
 import emailjs from '@emailjs/browser';
 
 const portraitUrl = `${import.meta.env.BASE_URL}MyImage.jpg`;
-const resumeUrl = `${import.meta.env.BASE_URL}N-Sai-Vighnesh-FINAL.pdf`;
+const fullStackResumeUrl = `${import.meta.env.BASE_URL}vighnesh_fullstack.pdf`;
+const aiResumeUrl = `${import.meta.env.BASE_URL}vighnesh_ai.pdf`;
 const projectBannerUrl =
   'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80';
 
@@ -17,22 +18,25 @@ const navLinks = [
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const CONTACT_EMAIL = 'nsv2190@gmail.com';
 
 const introHighlights = [
   '9.3 CGPA Computer Science student at KL University',
   'Full-Stack development with React, Spring Boot, and modern DevOps',
-  'AI/LLM engineering with RAG, Ollama, and production workflows',
+  'AI/LLM engineering with RAG, Ollama, and deployment workflows',
   'Hackathon builder with Guidewire and Meta OpenEnv project experience',
   'Oracle-certified in DevOps, Generative AI, and AI Foundations',
 ];
+
+const currentFocus = ['RAG Systems', 'Full-Stack AI Apps', 'Cloud Deployment', 'Hackathon Builds'];
 
 const ventures = [
   {
     name: 'TermBrain',
     desc: 'AI observability platform for Linux and Kubernetes log diagnostics with offline LLM workflows.',
     status: 'Active',
-    tags: ['Python', 'Typer', 'Ollama', 'React', 'Kubernetes', 'Docker'],
-    metric: '40% faster troubleshooting',
+    tags: ['Python', 'Typer', 'Ollama', 'LangChain', 'ChromaDB', 'Kubernetes'],
+    metric: 'Local LLM diagnostics',
     color: 'from-cobalt to-sky-400',
     repo: 'https://github.com/saivighnesh2190/termbrain',
     demo: null,
@@ -41,7 +45,7 @@ const ventures = [
     name: 'GAN-Based Synthetic Image Generator',
     desc: 'Built GAN/DCGAN pipelines in PyTorch to generate diseased leaf images for dataset augmentation.',
     status: 'Active',
-    tags: ['Python', 'PyTorch', 'DCGAN'],
+    tags: ['Python', 'PyTorch', 'DCGAN', 'Gradio'],
     metric: 'Live Hugging Face demo',
     color: 'from-emerald-500 to-teal-500',
     repo: 'https://github.com/saivighnesh2190/GAN---Synthetic-Image-Generator-For-Diseaesed-Leaves',
@@ -52,7 +56,7 @@ const ventures = [
     desc: 'AI-powered developer productivity platform with coding analytics and personalized algorithm guidance.',
     status: 'Scaling',
     tags: ['React', 'Next.js', 'PostgreSQL', 'AI/LLM'],
-    metric: '30% faster DSA review',
+    metric: 'AI coding assistant',
     color: 'from-violet to-fuchsia-400',
     repo: 'https://github.com/saivighnesh2190/clip-flow-ai',
     demo: 'https://clipflowai.vercel.app',
@@ -62,29 +66,19 @@ const ventures = [
     desc: 'Full-stack planner with conversational trip recommendations and generated schedules.',
     status: 'Beta',
     tags: ['React', 'Vite', 'Spring Boot', 'MySQL', 'Gemini API'],
-    metric: '60% faster itinerary generation',
+    metric: 'Gemini itinerary builder',
     color: 'from-orange to-amber-400',
     repo: 'https://github.com/saivighnesh2190/travel-planner',
     demo: null,
-  },
-  {
-    name: 'No-Code Cleaning Agent',
-    desc: 'No-code booking assistant that captures property details, generates pricing, and automates confirmations.',
-    status: 'Active',
-    tags: ['Voiceflow', 'Make', 'Relevance AI'],
-    metric: 'Automated booking responses',
-    color: 'from-cyan-500 to-blue-500',
-    repo: 'https://creator.voiceflow.com/share/6866283c3dd3b7e09dd1f9c9/development',
-    demo: 'https://creator.voiceflow.com/share/6866283c3dd3b7e09dd1f9c9/development',
   },
 ];
 
 const projects = [
   {
     title: 'GigShield (Guidewire DevTrails)',
-    description: 'AI parametric insurance fraud-defense platform with multi-signal spoofing detection.',
+    description: 'AI parametric insurance platform with ML fraud detection and automated claim triggers.',
     status: 'Scaling',
-    tags: ['React', 'Node.js', 'MongoDB', 'Scikit-learn'],
+    tags: ['React', 'Spring Boot', 'FastAPI', 'Supabase', 'Scikit-learn'],
     meta: 'Hackathon 2026 project',
     year: '2026',
     icon: 'from-indigo-500 to-violet-500',
@@ -123,14 +117,16 @@ const websites = [
     traffic: 'Public',
     revenue: 'saivighnesh2190',
     link: 'https://github.com/saivighnesh2190',
+    accent: 'from-slate-700 to-slate-950',
   },
   {
     title: 'LeetCode',
     status: 'Growing',
-    description: 'Problem-solving profile with 100+ solved coding challenges.',
+    description: 'Coding practice profile with 100+ solved challenges.',
     traffic: '100+',
     revenue: 'leetcode.com/u/nsaivighnesh2190',
     link: 'https://leetcode.com/u/nsaivighnesh2190/',
+    accent: 'from-amber-500 to-orange-500',
   },
   {
     title: 'CodeForces',
@@ -139,14 +135,16 @@ const websites = [
     traffic: 'Active',
     revenue: '2300030455cse',
     link: 'https://codeforces.com/profile/2300030455cse',
+    accent: 'from-sky-500 to-cobalt',
   },
   {
     title: 'HackerRank',
     status: 'Active',
-    description: 'Coding profile and problem-solving track record.',
+    description: 'Coding profile and software engineering certification track record.',
     traffic: 'Public',
     revenue: 'h2300030455',
     link: 'https://www.hackerrank.com/profile/h2300030455',
+    accent: 'from-emerald-500 to-mint',
   },
   {
     title: 'CodeChef',
@@ -155,6 +153,7 @@ const websites = [
     traffic: 'Active',
     revenue: 'n_sai_vighnesh',
     link: 'https://www.codechef.com/users/n_sai_vighnesh',
+    accent: 'from-violet to-fuchsia-500',
   },
   {
     title: 'SmartInterviews',
@@ -163,17 +162,8 @@ const websites = [
     traffic: 'Public',
     revenue: 'nsv2300030455',
     link: 'https://smartinterviews.in/profile/nsv2300030455',
+    accent: 'from-cyan-500 to-teal-500',
   },
-];
-
-const socials = [
-  ['LinkedIn', 'nekkanti-sai-vighnesh-2a86b0372', 'Networking and updates', 'https://www.linkedin.com/in/nekkanti-sai-vighnesh-2a86b0372'],
-  ['GitHub', 'saivighnesh2190', 'Code repositories', 'https://github.com/saivighnesh2190'],
-  ['LeetCode', 'nsaivighnesh2190', '100+ solved', 'https://leetcode.com/u/nsaivighnesh2190/'],
-  ['CodeChef', 'n_sai_vighnesh', 'Competitive coding', 'https://www.codechef.com/users/n_sai_vighnesh'],
-  ['CodeForces', '2300030455cse', 'Contest profile', 'https://codeforces.com/profile/2300030455cse'],
-  ['HackerRank', 'h2300030455', 'Coding profile', 'https://www.hackerrank.com/profile/h2300030455'],
-  ['Email', 'nsv2190@gmail.com', 'Open to opportunities', 'mailto:nsv2190@gmail.com'],
 ];
 
 const keyFeatures = [
@@ -190,52 +180,52 @@ const projectDetailsMap = {
     period: '01/2026 - Present',
     team: '3-Person Team',
     description:
-      'AI observability platform to diagnose Linux and Kubernetes cluster issues using local LLM intelligence with offline-first workflows.',
+      'AI diagnostic CLI for Linux and Kubernetes cluster issues using local LLM inference, retrieval memory, and offline-first troubleshooting workflows.',
     quickStats: [
-      ['Troubleshooting Time', '-40%', 'Improved'],
-      ['Weekly Downtime Saved', '2h', 'Saved'],
-      ['Primary Environment', 'K8s', 'Production'],
-      ['Mode', 'Offline', 'Secure'],
+      ['Diagnostic Scope', 'Linux/K8s', 'Target'],
+      ['LLM Runtime', 'Ollama', 'Local'],
+      ['RAG Store', 'ChromaDB', 'Indexed'],
+      ['Interface', 'CLI', 'Typer/Rich'],
     ],
     features: [
-      'Offline RAG memory for secure diagnostics',
-      'Automated Linux and Kubernetes log analysis',
-      'Python CLI with Typer + Rich UX',
-      'Ollama local LLM integration',
-      'Dockerized deployment + Jenkins CI/CD',
-      'Collaborative issue triage workflows',
+      'Offline RAG memory for diagnostic context',
+      'Linux and Kubernetes error analysis',
+      'Python CLI built with Typer and Rich',
+      'Local LLM inference through Ollama',
+      'Dockerized setup with Jenkins workflow',
+      'Team-built troubleshooting workflow',
     ],
   },
   'ClipFlow AI': {
     period: '02/2025',
-    team: 'Product Build',
+    team: 'Full-Stack Build',
     description:
-      'AI-powered developer productivity platform that syncs coding activity into a dashboard and provides personalized algorithm recommendations.',
+      'Developer productivity dashboard that organizes coding activity, streaks, and AI-assisted algorithm feedback in a deployable full-stack app.',
     quickStats: [
-      ['DSA Review Time', '-30%', 'Improved'],
-      ['Assistant', 'AI', 'Enabled'],
-      ['Architecture', 'Next.js + React', 'Stable'],
-      ['Data Layer', 'PostgreSQL', 'Connected'],
+      ['Frontend', 'Next.js', 'SSR'],
+      ['Data Layer', 'PostgreSQL', 'Persistent'],
+      ['Deployment', 'Vercel', 'Live'],
+      ['Assistant', 'AI/LLM', 'Integrated'],
     ],
     features: [
       'Coding activity timeline dashboard',
       'AI assistant for algorithm analysis',
-      'Personalized recommendation engine',
-      'Review-speed and consistency tracking',
+      'Personalized practice recommendations',
+      'Streak and consistency tracking',
       'Full-stack deployable architecture',
       'Public demo with GitHub source',
     ],
   },
   'Travel Planner Website': {
-    period: '12/2024',
+    period: '12/2025',
     team: 'Full-Stack Build',
     description:
       'Full-stack travel planner with conversational planning, generated schedules, and API-driven itinerary orchestration.',
     quickStats: [
-      ['Itinerary Generation', '+60%', 'Faster'],
       ['Frontend', 'React + Vite', 'Responsive'],
       ['Backend', 'Spring Boot', 'REST API'],
-      ['Assistant', 'Gemini API', 'Integrated'],
+      ['Database', 'MySQL', 'Persistent'],
+      ['AI Layer', 'Gemini API', 'Integrated'],
     ],
     features: [
       'Responsive trip-planning interface',
@@ -246,43 +236,23 @@ const projectDetailsMap = {
       'End-to-end full-stack workflow',
     ],
   },
-  'No-Code Cleaning Agent': {
-    period: '2024',
-    team: 'Automation Build',
-    description:
-      'No-code booking assistant workflow that captures cleaning requests, generates price estimates, and automates customer confirmations.',
-    quickStats: [
-      ['Mode', 'No-Code', 'Operational'],
-      ['Workflow', 'Lead to Booking', 'Automated'],
-      ['Stack', 'Voiceflow + Make', 'Integrated'],
-      ['Assistant', 'Relevance AI', 'Connected'],
-    ],
-    features: [
-      'Property detail capture workflow',
-      'Automated pricing generation',
-      'Booking confirmation automation',
-      'Voiceflow conversational interface',
-      'Make scenario orchestration',
-      'No-code deployment path',
-    ],
-  },
   'GAN-Based Synthetic Image Generator': {
-    period: '07/2025',
+    period: '01/2026',
     team: 'Research Project',
     description:
       'Implemented GAN and DCGAN models for synthetic diseased-leaf image generation to improve training-data diversity.',
     quickStats: [
       ['Model Family', 'GAN + DCGAN', 'Implemented'],
-      ['Framework', 'PyTorch', 'Production'],
-      ['Deployment', 'HF Space', 'Live'],
-      ['Use Case', 'Data Augmentation', 'Validated'],
+      ['Framework', 'PyTorch', 'Training'],
+      ['Interface', 'Gradio', 'Interactive'],
+      ['Deployment', 'HF Space', 'Live Demo'],
     ],
     features: [
       'Vanilla GAN and DCGAN pipelines',
       'Synthetic diseased-leaf generation',
       'CPU-optimized preprocessing',
-      'Stability and quality comparisons',
-      'Dataset augmentation workflow',
+      'Training stability comparisons',
+      'Dataset augmentation experiments',
       'Public demo and repository',
     ],
   },
@@ -290,19 +260,19 @@ const projectDetailsMap = {
     period: '2026',
     team: 'Hackathon Team',
     description:
-      'AI parametric insurance platform for gig-worker fraud defense with confidence scoring from multi-signal geospatial fusion.',
+      'AI parametric insurance platform for Indian gig workers with ML-powered fraud detection and automated claim triggers.',
     quickStats: [
       ['Hackathon', 'Guidewire DevTrails', '2026'],
-      ['Signals', 'GPS + IMU + IP', 'Fused'],
-      ['Fraud Scoring', 'Confidence Model', 'Enabled'],
-      ['Stack', 'React + Node + ML', 'Integrated'],
+      ['Domain', 'Gig Insurance', 'Applied'],
+      ['Fraud Detection', 'Scikit-learn', 'Enabled'],
+      ['Stack', 'React + Spring + FastAPI', 'Integrated'],
     ],
     features: [
-      'Fraud Confidence Score pipeline',
-      'Spoofing detection heuristics',
-      'Signal-fusion anomaly checks',
+      'ML-powered fraud detection',
+      'Automated weather/AQI claim triggers',
+      'Supabase-backed data workflows',
       'Risk-first insurance workflows',
-      'Live dashboard for decisions',
+      'Dashboard-driven claim review',
       'Hackathon-grade rapid delivery',
     ],
   },
@@ -360,7 +330,7 @@ const certifications = [
   {
     title: 'SmartInterviews Smart Coder Certificate',
     issuer: 'SmartInterviews',
-    track: 'DSA & Problem Solving',
+    track: 'Coding Practice',
     year: '2025',
     url: 'https://smartinterviews.in/certificate/2479d331',
   },
@@ -433,7 +403,7 @@ function Hero() {
     <Frame id="home" className="mt-3 py-4 lg:py-6">
       <div className="grid gap-4 lg:grid-cols-[1.85fr,0.85fr]">
         <article className="card soft-grid p-6 lg:p-8">
-          <span className="pill bg-mintTint text-mint">Open for internships and full-time roles</span>
+          <span className="pill bg-mintTint text-mint">Open to internships and entry-level software roles</span>
           <h1 className="mt-5 text-5xl font-extrabold leading-[0.95] tracking-tight text-ink lg:text-7xl">
             N Sai
             <br />
@@ -452,13 +422,27 @@ function Hero() {
               </li>
             ))}
           </ul>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {currentFocus.map((item) => (
+              <span key={item} className="rounded-full border border-cobalt/20 bg-skyTint px-3 py-1.5 text-xs font-semibold text-cobalt">
+                {item}
+              </span>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={resumeUrl}
+              href={fullStackResumeUrl}
               download
               className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white shadow-soft"
             >
-              Download Resume
+              Full-Stack Resume
+            </a>
+            <a
+              href={aiResumeUrl}
+              download
+              className="rounded-full bg-cobalt px-6 py-3 text-sm font-semibold text-white shadow-soft"
+            >
+              AI Resume
             </a>
             <a
               href="https://github.com/saivighnesh2190"
@@ -503,7 +487,7 @@ function Ventures({ onDetails }) {
       <div className="flex items-end justify-between gap-4">
         <div>
           <h2 className="text-4xl font-bold tracking-tight text-ink">Featured Projects</h2>
-          <p className="mt-2 text-sm text-body">Projects directly mapped from my resume and current engineering work.</p>
+          <p className="mt-2 text-sm text-body">Resume projects and current engineering work across full-stack and AI systems.</p>
         </div>
         <div className="grid grid-cols-2 gap-8 text-right">
           <div>
@@ -577,7 +561,7 @@ function Ventures({ onDetails }) {
       <div id="skills" className="mt-5 grid scroll-mt-24 gap-4 lg:grid-cols-2">
         <article className="card p-5">
           <h3 className="text-2xl font-bold text-ink">Technical Skills</h3>
-          <div className="mt-4 grid gap-4 text-xs sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-4 text-xs sm:grid-cols-2">
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">Languages</p>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -597,7 +581,7 @@ function Ventures({ onDetails }) {
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">Backend</p>
               <div className="mt-2 flex flex-wrap gap-2">
-                {['Spring Boot', 'Django', 'REST APIs', 'MySQL', 'PostgreSQL', 'Supabase'].map((item) => (
+                {['Spring Boot', 'FastAPI', 'REST APIs', 'MySQL', 'PostgreSQL', 'Supabase'].map((item) => (
                   <SmallTag key={item}>{item}</SmallTag>
                 ))}
               </div>
@@ -613,19 +597,10 @@ function Ventures({ onDetails }) {
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">AI Tools & Libraries</p>
               <div className="mt-2 flex flex-wrap gap-2">
-                {['Ollama', 'Gemini API', 'Genkit', 'PyTorch', 'Scikit-learn', 'Voiceflow', 'N8N', 'Relevance AI', 'Make'].map((item) => (
+                {['Ollama', 'Gemini API', 'LangChain', 'ChromaDB', 'PyTorch', 'Scikit-learn', 'Gradio', 'NumPy', 'Pandas'].map((item) => (
                   <SmallTag key={item}>{item}</SmallTag>
                 ))}
               </div>
-            </div>
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">DSA & Problem Solving</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {['Arrays', 'Strings', 'Linked List', 'Trees', 'Graphs', 'Dynamic Programming', 'Greedy', 'Recursion', 'Binary Search'].map((item) => (
-                  <SmallTag key={item}>{item}</SmallTag>
-                ))}
-              </div>
-              <p className="mt-2 text-[11px] font-semibold text-cobalt">Validated by SmartInterviews Smart Coder Certificate</p>
             </div>
           </div>
         </article>
@@ -724,30 +699,39 @@ function ProjectRows({ onDetails, projectItems }) {
 
       <div className="mt-10 flex items-center justify-between">
         <div>
-          <h2 className="text-4xl font-bold text-ink">Profiles and Platforms</h2>
-          <p className="mt-2 text-sm text-body">Public profiles and coding platforms from my resume.</p>
+          <h2 className="text-4xl font-bold text-ink">Public Profiles</h2>
+          <p className="mt-2 text-sm text-body">Public proof of work, coding activity, and engineering credentials.</p>
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        {websites.map((site, index) => (
-          <a key={site.title} href={site.link} target="_blank" rel="noreferrer" className="card p-4 transition hover:translate-y-[-2px]">
+      <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        {websites.map((site) => (
+          <a
+            key={site.title}
+            href={site.link}
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-3xl border border-borderSoft bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:border-cobalt/30 hover:shadow-lift"
+          >
             <div className="flex items-center justify-between">
-              <div className={`h-9 w-9 rounded-xl bg-gradient-to-br ${index % 2 ? 'from-rose-500 to-pink-500' : 'from-orange-500 to-red-500'}`} />
+              <div className={`flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br ${site.accent} text-xs font-extrabold text-white shadow-soft`}>
+                {site.title.slice(0, 2).toUpperCase()}
+              </div>
               <span className={pillClass(site.status)}>{site.status}</span>
             </div>
-            <p className="mt-3 text-xl font-bold text-ink">{site.title}</p>
-            <p className="mt-1 text-xs text-body">{site.description}</p>
-            <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-body">
-              <div>
+            <p className="mt-4 text-xl font-bold text-ink">{site.title}</p>
+            <p className="mt-1 min-h-[36px] text-xs leading-relaxed text-body">{site.description}</p>
+            <div className="mt-4 grid grid-cols-[0.75fr,1.25fr] gap-2 rounded-2xl border border-borderSoft bg-slate-50 p-3 text-xs text-body">
+              <div className="border-r border-borderSoft pr-2">
                 <p className="text-base font-extrabold text-ink">{site.traffic}</p>
-                <p>Status</p>
+                <p>Proof</p>
               </div>
-              <div>
-                <p className="text-sm font-extrabold text-mint break-all">{site.revenue}</p>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-extrabold text-mint">{site.revenue}</p>
                 <p>Handle</p>
               </div>
             </div>
+            <p className="mt-3 text-xs font-semibold text-cobalt opacity-0 transition group-hover:opacity-100">Open profile</p>
           </a>
         ))}
       </div>
@@ -760,7 +744,7 @@ function CareerAndSocial() {
     <Frame id="experience" className="py-6 lg:py-8">
       <div className="grid gap-4 lg:grid-cols-[1.45fr,0.9fr]">
         <article className="card p-5">
-          <h2 className="text-3xl font-bold text-ink">Work Experience</h2>
+          <h2 className="text-3xl font-bold text-ink">Experience & Training</h2>
           <div className="mt-4 space-y-5">
             <div>
               <div className="flex items-center justify-between">
@@ -870,23 +854,22 @@ function ProjectDetail({ onDetails }) {
         <article className="card p-5">
           <h3 className="text-3xl font-bold text-ink">Project Overview</h3>
           <p className="mt-3 text-sm leading-relaxed text-body">
-            TermBrain is an AI observability platform built to diagnose Linux and Kubernetes cluster issues with secure,
-            local-first intelligence. It combines structured log workflows, offline RAG memory, and automated troubleshooting
-            pathways for engineering teams.
+            TermBrain is an AI diagnostic CLI for Linux and Kubernetes issues with secure, local-first intelligence.
+            It combines structured log workflows, offline RAG memory, and guided troubleshooting paths for engineering teams.
           </p>
 
           <h3 className="mt-6 text-3xl font-bold text-ink">Technical Stack</h3>
           <div className="mt-3 flex flex-wrap gap-2">
-            {['Python', 'Typer', 'Rich', 'Ollama', 'ChromaDB', 'LangChain', 'React', 'Kubernetes', 'Docker', 'Jenkins'].map((item) => (
+            {['Python', 'Typer', 'Rich', 'Ollama', 'ChromaDB', 'LangChain', 'Docker', 'Jenkins', 'Kubernetes'].map((item) => (
               <SmallTag key={item}>{item}</SmallTag>
             ))}
           </div>
 
           <ul className="mt-4 grid gap-2 text-sm text-body sm:grid-cols-2">
             {[
-              'Reduced manual troubleshooting by 40%',
+              'Targets faster manual troubleshooting',
               'Automated Linux and Kubernetes diagnostics',
-              'Prevented ~2 hours of weekly downtime',
+              'Retrieval-backed diagnostic context',
               'Offline and secure local log analysis',
             ].map((item) => (
               <li key={item} className="flex items-center gap-2">
@@ -904,7 +887,7 @@ function ProjectDetail({ onDetails }) {
               <div className="flex justify-between"><dt>Status</dt><dd className="font-semibold text-ink">Active</dd></div>
               <div className="flex justify-between"><dt>Category</dt><dd className="font-semibold text-ink">AI + DevOps</dd></div>
               <div className="flex justify-between"><dt>Team Size</dt><dd className="font-semibold text-ink">3</dd></div>
-              <div className="flex justify-between"><dt>Deployment</dt><dd className="font-semibold text-ink">Docker + Jenkins</dd></div>
+              <div className="flex justify-between"><dt>Workflow</dt><dd className="font-semibold text-ink">Docker + Jenkins</dd></div>
             </dl>
           </article>
 
@@ -937,11 +920,20 @@ function ContactSection() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData(formRef.current);
+    const fromName = String(formData.get('from_name') || '').trim();
+    const fromEmail = String(formData.get('from_email') || '').trim();
+    const message = String(formData.get('message') || '').trim();
 
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      const subject = encodeURIComponent(`Portfolio message from ${fromName || 'visitor'}`);
+      const body = encodeURIComponent(
+        `Name: ${fromName}\nEmail: ${fromEmail}\n\nMessage:\n${message}`
+      );
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
       setFormStatus({
-        type: 'error',
-        message: 'Email service is not configured yet. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in your .env file.',
+        type: 'success',
+        message: 'Opening your email app with this message addressed to me.',
       });
       return;
     }
@@ -965,7 +957,7 @@ function ContactSection() {
     <Frame id="contact-form" className="py-6 lg:py-8">
       <article className="card p-6 lg:p-7">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-body">Contact Me</p>
-        <h2 className="mt-2 text-4xl font-extrabold text-ink">Let us build something real together.</h2>
+        <h2 className="mt-2 text-4xl font-extrabold text-ink">Let's build something real together.</h2>
         <p className="mt-3 text-sm text-body">
           Share your name, email, and message below. I am actively looking for internships and full-time software roles in
           Full-Stack, AI Engineering, and DevOps.
@@ -1034,6 +1026,7 @@ function ContactSection() {
             </label>
 
             <input type="hidden" name="to_name" value="N Sai Vighnesh" />
+            <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
 
             <div className="flex flex-wrap items-center gap-3">
               <button
@@ -1063,7 +1056,7 @@ function DemoModal({ project, onClose }) {
   const subtitle = project.desc || project.description || 'Project details';
   const repoLink = project.repo || 'https://github.com/saivighnesh2190/termbrain';
   const demoLink = project.demo;
-  const tags = project.tags || ['React', 'Node.js'];
+  const tags = project.tags || ['React', 'FastAPI'];
   const detail = projectDetailsMap[title] || {
     period: 'Current',
     team: 'Project Build',
