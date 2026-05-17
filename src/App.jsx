@@ -23,20 +23,20 @@ const CONTACT_EMAIL = 'nsv2190@gmail.com';
 const introHighlights = [
   '9.3 CGPA Computer Science student at KL University',
   'Full-Stack development with React, Spring Boot, and modern DevOps',
-  'AI/LLM engineering with RAG, Ollama, and deployment workflows',
+  'AI/LLM engineering with Linux-native diagnostics and CLI automation',
   'Hackathon builder with Guidewire and Meta OpenEnv project experience',
   'Oracle-certified in DevOps, Generative AI, and AI Foundations',
 ];
 
-const currentFocus = ['RAG Systems', 'Full-Stack AI Apps', 'Cloud Deployment', 'Hackathon Builds'];
+const currentFocus = ['Linux AI Tools', 'Full-Stack AI Apps', 'CLI Automation', 'Hackathon Builds'];
 
 const ventures = [
   {
     name: 'TermBrain',
-    desc: 'AI observability platform for Linux and Kubernetes log diagnostics with offline LLM workflows.',
+    desc: 'Linux-native AI diagnostic CLI that streams logs, compresses errors, caches answers, and suggests safe fixes.',
     status: 'Active',
-    tags: ['Python', 'Typer', 'Ollama', 'LangChain', 'ChromaDB', 'Kubernetes'],
-    metric: 'Local LLM diagnostics',
+    tags: ['Python', 'Typer', 'Rich', 'g4f', 'SQLite', 'systemd'],
+    metric: 'Read-only AI diagnostics',
     color: 'from-cobalt to-sky-400',
     repo: 'https://github.com/saivighnesh2190/termbrain',
     demo: null,
@@ -167,12 +167,23 @@ const websites = [
 ];
 
 const keyFeatures = [
-  'Offline RAG memory for secure diagnostics',
-  'Automated Linux and Kubernetes log analysis',
+  'SQLite-backed diagnostic history and cache',
+  'Linux log collection from native system tools',
   'Python CLI with Typer + Rich UX',
-  'Ollama local LLM integration',
-  'Dockerized deployment + Jenkins CI/CD',
-  'Collaborative issue triage workflows',
+  'g4f cloud LLM inference without manual API keys',
+  'Read-only fix suggestions for safer debugging',
+  'Systemd timer scheduling for daily health scans',
+];
+
+const termbrainCommands = [
+  ['Diagnose', 'termbrain diagnose journal', 'journal, pacman, gpu, boot, network'],
+  ['Suggest Fix', 'termbrain suggest-fix service sshd', 'git, pacman, disk, service'],
+  ['Explain', 'termbrain explain "tar -czvf backup.tar.gz /home/user"', 'command and script breakdowns'],
+  ['Health', 'termbrain doctor', 'CPU, memory, disk, failed services'],
+  ['Security', 'termbrain security network', 'ports, sshd logs, sudo attempts'],
+  ['History', 'termbrain history search "wifi" --semantic', 'SQLite audit and semantic search'],
+  ['Schedule', 'termbrain schedule setup', 'user-scope systemd timer'],
+  ['Monitor', 'termbrain monitor cpu', 'local live Rich dashboard'],
 ];
 
 const projectDetailsMap = {
@@ -180,20 +191,20 @@ const projectDetailsMap = {
     period: '01/2026 - Present',
     team: '3-Person Team',
     description:
-      'AI diagnostic CLI for Linux and Kubernetes cluster issues using local LLM inference, retrieval memory, and offline-first troubleshooting workflows.',
+      'Linux-native AI diagnostic CLI that hooks into journalctl, pacman, systemctl, ss, and other system tools to parse logs, compress noisy error output, and return human-readable diagnoses with safe fix suggestions.',
     quickStats: [
-      ['Diagnostic Scope', 'Linux/K8s', 'Target'],
-      ['LLM Runtime', 'Ollama', 'Local'],
-      ['RAG Store', 'ChromaDB', 'Indexed'],
+      ['Diagnostic Scope', 'Linux Tools', 'Native'],
+      ['AI Engine', 'g4f', 'Cloud'],
+      ['Storage', 'SQLite', 'Local'],
       ['Interface', 'CLI', 'Typer/Rich'],
     ],
     features: [
-      'Offline RAG memory for diagnostic context',
-      'Linux and Kubernetes error analysis',
-      'Python CLI built with Typer and Rich',
-      'Local LLM inference through Ollama',
-      'Dockerized setup with Jenkins workflow',
-      'Team-built troubleshooting workflow',
+      'Read-only suggest mode for safer debugging',
+      'journalctl, pacman, systemctl, ss, and log integrations',
+      'Regex-based log trimming for LLM context windows',
+      'Rich live markdown streaming and terminal dashboard',
+      'SQLite history, caching, and semantic search flow',
+      'Systemd timer setup for scheduled health scans',
     ],
   },
   'ClipFlow AI': {
@@ -412,7 +423,7 @@ function Hero() {
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-body">Professional Summary</p>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-body">
             Motivated Computer Science student (9.3 CGPA) specializing in Full-Stack Development (React, Spring Boot),
-            AI/LLM integrations (RAG, Ollama), and Cloud DevOps (Docker, Kubernetes).
+            AI/LLM integrations, Linux-native CLI automation, and Cloud DevOps (Docker, Kubernetes).
           </p>
           <ul className="mt-4 grid gap-2 text-sm text-body sm:grid-cols-2">
             {introHighlights.map((item) => (
@@ -597,7 +608,7 @@ function Ventures({ onDetails }) {
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">AI Tools & Libraries</p>
               <div className="mt-2 flex flex-wrap gap-2">
-                {['Ollama', 'Gemini API', 'LangChain', 'ChromaDB', 'PyTorch', 'Scikit-learn', 'Gradio', 'NumPy', 'Pandas'].map((item) => (
+                {['g4f', 'Gemini API', 'Prompt Engineering', 'SQLite Caching', 'PyTorch', 'Scikit-learn', 'Gradio', 'NumPy', 'Pandas'].map((item) => (
                   <SmallTag key={item}>{item}</SmallTag>
                 ))}
               </div>
@@ -611,7 +622,7 @@ function Ventures({ onDetails }) {
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
               ['Full-Stack Development', 'React + Spring Boot based product engineering.'],
-              ['AI Integrations', 'RAG, Ollama, and GenAI features in real products.'],
+              ['AI Integrations', 'LLM-powered diagnostics and GenAI features in real products.'],
               ['DevOps Automation', 'Docker/Jenkins/Kubernetes for deployment and reliability.'],
               ['Hackathon Execution', 'Fast prototyping and rapid technical decision making.'],
             ].map(([title, desc]) => (
@@ -833,6 +844,90 @@ function CareerAndSocial() {
   );
 }
 
+function TermbrainPreview() {
+  const journalLines = [
+    '/var/lib/systemd/coredump/core.antigravity...',
+    '/var/lib/systemd/coredump/core.plasmashell...',
+    '/var/lib/systemd/coredump/core.wpscloudsvr...',
+    'Sending 1474 lines to AI...',
+  ];
+
+  const diagnosisBullets = [
+    'KDE Plasma components show repeated crash traces',
+    'AI summary groups likely configuration and version issues',
+    'Suggested commands are presented for manual review',
+  ];
+
+  return (
+    <div className="mt-5 grid gap-4 lg:grid-cols-[1.15fr,0.85fr]">
+      <article className="overflow-hidden rounded-3xl border border-slate-700 bg-[#171924] shadow-lift">
+        <div className="border-b border-slate-700 px-4 py-2 font-mono text-xs text-lime-300">
+          {')'} termbrain diagnose journal
+        </div>
+        <div className="grid gap-3 p-4 font-mono text-[11px] leading-relaxed text-slate-300">
+          <div className="rounded-2xl border border-slate-500/70 p-3">
+            <p className="mb-2 text-center text-slate-300">journal</p>
+            {journalLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
+          <div className="rounded-2xl border border-lime-500/70 p-3">
+            <p className="mb-2 text-center text-lime-300">TermBrain Suggestion (Cloud Model)</p>
+            <p className="text-violet-300">Summary</p>
+            <p className="mt-2">
+              The system appears to be experiencing repeated component crashes. TermBrain extracts the relevant log lines
+              and returns a human-readable explanation with suggested commands.
+            </p>
+            <ul className="mt-3 list-disc space-y-1 pl-5">
+              {diagnosisBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article className="overflow-hidden rounded-3xl border border-slate-700 bg-[#171924] shadow-lift">
+        <div className="border-b border-slate-700 px-4 py-2 font-mono text-xs text-lime-300">
+          {')'} termbrain doctor
+        </div>
+        <div className="p-4 font-mono text-[11px] leading-relaxed text-slate-300">
+          <p className="text-center italic text-slate-300">System Health Snapshot</p>
+          <div className="mt-3 grid grid-cols-[1.1fr,1fr,0.7fr] gap-2">
+            {['Metric', 'Value', 'Status'].map((item) => (
+              <p key={item} className="font-bold text-sky-300">{item}</p>
+            ))}
+            {[
+              ['CPU Load', '0.61, 1.16, 1.27', 'ok'],
+              ['Memory Usage', '6.6G / 15.4G', 'ok'],
+              ['Disk Usage', '746G / 2.2T', 'ok'],
+              ['Temperatures', 'Available', 'critical'],
+            ].map(([metric, value, status]) => (
+              <React.Fragment key={metric}>
+                <p className={status === 'critical' ? 'text-rose-300' : 'text-lime-300'}>{metric}</p>
+                <p>{value}</p>
+                <p className={status === 'critical' ? 'text-rose-300' : 'text-lime-300'}>{status}</p>
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="mt-4 rounded-xl border border-sky-400/70 p-3">
+            System looks perfectly healthy. No LLM call needed.
+          </div>
+          <div className="mt-5 border-t border-slate-700 pt-3 text-lime-300">
+            {')'} termbrain diagnose gpu
+          </div>
+          <div className="mt-2 rounded-2xl border border-slate-500/70 p-3 text-slate-300">
+            <p>--- lspci ---</p>
+            <p>00:02.0 VGA compatible controller: Intel UHD Graphics</p>
+            <p>Kernel driver in use: i915</p>
+            <p className="mt-2 text-center">Sending 42 lines to AI...</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+}
+
 function ProjectDetail({ onDetails }) {
   return (
     <Frame className="py-6 lg:py-8">
@@ -840,7 +935,7 @@ function ProjectDetail({ onDetails }) {
         <div>
           <span className="pill bg-orangeTint text-orange">Current Flagship Project</span>
           <h2 className="mt-2 text-5xl font-extrabold text-ink">TermBrain</h2>
-          <p className="text-sm text-body">AI Observability Platform for Linux and Kubernetes</p>
+          <p className="text-sm text-body">Linux-Native AI Diagnostic CLI</p>
         </div>
         <div className="text-right">
           <p className="text-3xl font-extrabold text-ink">01/2026 - Present</p>
@@ -848,29 +943,29 @@ function ProjectDetail({ onDetails }) {
         </div>
       </div>
 
-      <img src={projectBannerUrl} alt="Team collaboration" className="mt-5 h-64 w-full rounded-3xl border border-borderSoft object-cover" />
+      <TermbrainPreview />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-[1.45fr,0.8fr]">
         <article className="card p-5">
           <h3 className="text-3xl font-bold text-ink">Project Overview</h3>
           <p className="mt-3 text-sm leading-relaxed text-body">
-            TermBrain is an AI diagnostic CLI for Linux and Kubernetes issues with secure, local-first intelligence.
-            It combines structured log workflows, offline RAG memory, and guided troubleshooting paths for engineering teams.
+            TermBrain is a Linux-native AI diagnostic CLI that collects logs from tools like journalctl, pacman,
+            systemctl, and ss, compresses noisy error output, and returns safe, human-readable fix suggestions.
           </p>
 
           <h3 className="mt-6 text-3xl font-bold text-ink">Technical Stack</h3>
           <div className="mt-3 flex flex-wrap gap-2">
-            {['Python', 'Typer', 'Rich', 'Ollama', 'ChromaDB', 'LangChain', 'Docker', 'Jenkins', 'Kubernetes'].map((item) => (
+            {['Python', 'Typer', 'Rich', 'g4f', 'SQLite', 'systemd', 'Bash', 'Linux'].map((item) => (
               <SmallTag key={item}>{item}</SmallTag>
             ))}
           </div>
 
           <ul className="mt-4 grid gap-2 text-sm text-body sm:grid-cols-2">
             {[
-              'Targets faster manual troubleshooting',
-              'Automated Linux and Kubernetes diagnostics',
-              'Retrieval-backed diagnostic context',
-              'Offline and secure local log analysis',
+              'Read-only suggest mode for safer debugging',
+              'Native Linux log and service diagnostics',
+              'SQLite-backed history and smart caching',
+              'Systemd scheduling for daily health scans',
             ].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-mint" />
@@ -878,6 +973,17 @@ function ProjectDetail({ onDetails }) {
               </li>
             ))}
           </ul>
+
+          <h3 className="mt-6 text-3xl font-bold text-ink">Working Command Suite</h3>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {termbrainCommands.map(([group, command, scope]) => (
+              <div key={command} className="rounded-2xl border border-borderSoft bg-slate-50 p-3">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-body">{group}</p>
+                <p className="mt-1 font-mono text-xs font-semibold text-ink">{command}</p>
+                <p className="mt-1 text-xs text-body">{scope}</p>
+              </div>
+            ))}
+          </div>
         </article>
 
         <div className="space-y-4">
@@ -885,10 +991,22 @@ function ProjectDetail({ onDetails }) {
             <h4 className="text-xl font-bold text-ink">Project Details</h4>
             <dl className="mt-3 space-y-2 text-sm text-body">
               <div className="flex justify-between"><dt>Status</dt><dd className="font-semibold text-ink">Active</dd></div>
-              <div className="flex justify-between"><dt>Category</dt><dd className="font-semibold text-ink">AI + DevOps</dd></div>
+              <div className="flex justify-between"><dt>Category</dt><dd className="font-semibold text-ink">AI + Linux CLI</dd></div>
               <div className="flex justify-between"><dt>Team Size</dt><dd className="font-semibold text-ink">3</dd></div>
-              <div className="flex justify-between"><dt>Workflow</dt><dd className="font-semibold text-ink">Docker + Jenkins</dd></div>
+              <div className="flex justify-between"><dt>AI Engine</dt><dd className="font-semibold text-ink">g4f</dd></div>
+              <div className="flex justify-between"><dt>Storage</dt><dd className="font-semibold text-ink">SQLite</dd></div>
+              <div className="flex justify-between"><dt>Scheduler</dt><dd className="font-semibold text-ink">systemd</dd></div>
             </dl>
+          </article>
+
+          <article className="card p-4">
+            <h4 className="text-xl font-bold text-ink">Technical Challenges</h4>
+            <ul className="mt-3 space-y-2 text-sm text-body">
+              <li>Compressed large logs with regex filters for error, fail, and critical lines.</li>
+              <li>Used batched Rich rendering to reduce terminal flicker while streaming markdown.</li>
+              <li>Combined local thresholding and SQLite caching to avoid unnecessary LLM calls.</li>
+              <li>Built role-based prompts for Linux networking, package, service, and security tasks.</li>
+            </ul>
           </article>
 
           <article className="card p-4">
