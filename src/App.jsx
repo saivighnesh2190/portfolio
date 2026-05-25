@@ -332,11 +332,11 @@ const certifications = [
     url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=32712AFC91674345FB776506C63913544DD85D0D82B12D987BD22D1866568F81',
   },
   {
-    title: 'HackerRank Software Engineer Role Certification',
-    issuer: 'HackerRank',
-    track: 'Software Engineering',
+    title: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    track: 'Cloud Foundations',
     year: '2025',
-    url: 'https://www.hackerrank.com/certificates/iframe/e432215c018b',
+    url: 'https://www.credly.com/badges/40b71834-6cbc-4c10-bb7e-2b557e6ce8fe/public_url',
   },
   {
     title: 'SmartInterviews Smart Coder Certificate',
