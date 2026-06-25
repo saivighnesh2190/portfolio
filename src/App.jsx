@@ -1,7 +1,7 @@
 import React from 'react';
 import emailjs from '@emailjs/browser';
 
-const portraitUrl = `${import.meta.env.BASE_URL}MyImage.jpg`;
+const portraitUrl = `${import.meta.env.BASE_URL}sai_vighnesh.png`;
 const fullStackResumeUrl = `${import.meta.env.BASE_URL}vighnesh_fullstack.pdf`;
 const aiResumeUrl = `${import.meta.env.BASE_URL}vighnesh_ai.pdf`;
 const projectBannerUrl =
